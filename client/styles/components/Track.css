@@ -1,0 +1,69 @@
+.Track-Card {
+    margin: 1.5em;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.Track-Card img {
+    height: 300px;
+    width: 100%;
+}
+
+.Track-Card h1 {
+    color: white;
+    letter-spacing: .5px;
+    padding: .5em;
+    font-size: 1.25rem;
+}
+
+.Track-Card h2 {
+    color: #9E9E9E;
+    letter-spacing: .5px;
+    padding: 0 .5em .5em .5em;
+}
+
+.Track-Social-Links {
+    display: flex;
+    background-color: #616161;
+    color: #69F0AE;
+    justify-content: space-around;
+}
+
+.Track-Social-Links li {
+    padding: .75em 0;
+}
+
+.Track-Social-Links img {
+    height: 30px;
+    width: 30px;
+}
+
+.Track-Controls button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.Track-Controls img {
+    height: 50px;
+}
+
+.Track-Volume-Controls {
+    display: flex;
+    justify-content: center;
+    padding: .75em;
+}
+
+.Track-Volume-Controls li {
+    padding: .25em;
+}
+
+.Track-Volume-Controls img {
+    height: 20px;
+    width: 20px;
+}
+
+.Track-Controls-Play {
+    display: flex;
+    justify-content: center;
+    padding: .5em;
+}

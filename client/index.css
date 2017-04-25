@@ -1,0 +1,13 @@
+@import "styles/utils/cssreset.css";
+@import "styles/utils/grid.css";
+@import "styles/shared/colors.css";
+@import "styles/shared/typography.css";
+@import "styles/components/Nav.css";
+@import "styles/components/Track.css";
+
+body {
+    background-color: var(--color-gunmetal);
+    font-family: var(--body-font);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height);
+}
