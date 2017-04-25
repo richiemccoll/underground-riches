@@ -1,31 +1,40 @@
-import React from 'react';
+import React from "react";
 
-const TrackCard = () => {
+const TrackCard = (
+  {
+    id,
+    title,
+    artist,
+    coverArt,
+    artistFacebook,
+    artistSoundcloud,
+    artistTwitter,
+    artistInstagram,
+    playTrack,
+    pauseTrack,
+    isPlaying
+  }
+) => {
   return (
     <div className="Track-Card">
-      <img
-        alt="Track-cover-art"
-        src="https://i1.sndcdn.com/artworks-000217307371-zlvzi6-t500x500.jpg"
-      />
-      <h1>Track title</h1>
-      <h2>Track artist</h2>
+      <img alt="Track-cover-art" src={coverArt} />
+      <h1>{title}</h1>
+      <h2>{artist}</h2>
       <ul className="Track-Social-Links">
-        <li>
-          <img src="./facebook-icon.png" alt="artist-facebook" />
-        </li>
-        <li>
-          <img src="./twitter-icon.png" alt="artist-twitter" />
-        </li>
-        <li>
-          <img src="./soundcloud-icon.png" alt="artist-soundcloud" />
-        </li>
-        <li>
-          <img src="./instagram-icon.png" alt="artist-instagram" />
-        </li>
+        {artistFacebook && <FacebookLink url={artistFacebook} />}
+        {artistSoundcloud && <SoundcloudLink url={artistSoundcloud} />}
+        {artistTwitter && <TwitterLink url={artistTwitter} />}
+        {artistInstagram && <InstagramLink url={artistInstagram} />}
       </ul>
       <ul className="Track-Controls">
         <li className="Track-Controls-Play">
-          <button><img src="./play-button.png" alt="play-icon" /></button>
+          {isPlaying
+            ? <button onClick={() => pauseTrack()}>
+                <img src="./pause-button.png" alt="pause-icon" />
+              </button>
+            : <button onClick={() => playTrack(title, artist)}>
+                <img src="./play-button.png" alt="play-icon" />
+              </button>}
         </li>
       </ul>
       <ul className="Track-Volume-Controls">
@@ -36,5 +45,29 @@ const TrackCard = () => {
     </div>
   );
 };
+
+let FacebookLink = ({ url }) => (
+  <a href={url}>
+    <li><img src="./facebook-icon.png" alt="artist-facebook" /></li>
+  </a>
+);
+
+let TwitterLink = ({ url }) => (
+  <a href={url}>
+    <li><img src="./twitter-icon.png" alt="artist-twitter" /></li>
+  </a>
+);
+
+let SoundcloudLink = ({ url }) => (
+  <a href={url}>
+    <li><img src="./soundcloud-icon.png" alt="artist-soundcloud" /></li>
+  </a>
+);
+
+let InstagramLink = ({ url }) => (
+  <a href={url}>
+    <li><img src="./instagram-icon.png" alt="artist-instagram" /></li>
+  </a>
+);
 
 export default TrackCard;
