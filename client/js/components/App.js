@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import TracksContainer from "./TracksContainer";
+import PlayerContainer from "./PlayerContainer";
 import { tracks } from "./TrackData";
 
 class App extends React.Component {
@@ -20,8 +21,8 @@ class App extends React.Component {
   };
 
   pauseTrack = () => {
-    this.setState({ isPaused: true, isPlaying: false })
-  }
+    this.setState({ isPaused: true, isPlaying: false });
+  };
 
   render() {
     return (
@@ -29,14 +30,21 @@ class App extends React.Component {
         <Nav />
         <main>
           <TracksContainer
+            currentTrack={this.state.currentTrack}
             isPlaying={this.state.isPlaying}
             playTrack={this.playTrack}
             pauseTrack={this.pauseTrack}
             tracks={this.state.tracks}
           />
-        </main>
-        <footer>
-        </footer>
+        
+
+          <PlayerContainer
+            isPlaying={this.state.isPlaying}
+            track={this.state.currentTrack}
+          />
+          
+          </main>
+        <footer />
       </div>
     );
   }

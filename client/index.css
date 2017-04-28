@@ -4,6 +4,7 @@
 @import "styles/shared/typography.css";
 @import "styles/components/Nav.css";
 @import "styles/components/Track.css";
+@import "styles/components/PlayerContainer.css";
 
 body {
     background-color: var(--color-gunmetal);
