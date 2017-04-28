@@ -2,19 +2,23 @@ import React from "react";
 import TrackCard from "./TrackCard";
 
 class TracksContainer extends React.Component {
-
-  playTrack = (title, artist) => {
-    this.props.playTrack({ title, artist });
-  }
+  playTrack = (id, title, artist) => {
+    this.props.playTrack({ id, title, artist });
+  };
 
   render() {
     return (
       <div className="row">
         {this.props.tracks.map(track => {
           return (
-            <div key={track.id} className="col-xs-12 col-md-4">
+            <div key={track.id} className="col-xs-12 col-sm-6 col-md-4">
               <TrackCard
-                isPlaying={this.props.isPlaying}
+                isPlaying={
+                  this.props.currentTrack.id === track.id &&
+                    this.props.isPlaying
+                    ? true
+                    : false
+                }
                 id={track.id}
                 artist={track.artist}
                 coverArt={track.coverArt}

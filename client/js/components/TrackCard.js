@@ -32,7 +32,7 @@ const TrackCard = (
             ? <button onClick={() => pauseTrack()}>
                 <img src="./pause-button.png" alt="pause-icon" />
               </button>
-            : <button onClick={() => playTrack(title, artist)}>
+            : <button onClick={() => playTrack(id, title, artist)}>
                 <img src="./play-button.png" alt="play-icon" />
               </button>}
         </li>

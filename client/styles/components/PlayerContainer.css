@@ -1,0 +1,14 @@
+.Player-Container {
+    display: none;
+}
+
+.Player-Container--active {
+    bottom: 0;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: .7s;
+    height: 6em;
+    background-color: var(--color-gunmetal);
+    color: var(--color-turqouise);
+    display: flex;
+    justify-content: center;
+}
