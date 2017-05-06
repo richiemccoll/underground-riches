@@ -1160,6 +1160,11 @@ table {
     padding: .5em;
 }
 
+.active {
+    border: .2em solid #2196F3;
+    transition: all 1s ease-out;
+}
+
 .Player-Container {
     display: none;
 }
@@ -1177,6 +1182,13 @@ table {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    border: 2px solid #2196F3;
+    border-bottom: none;
+    transition: .7s;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
 }
 
 body {

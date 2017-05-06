@@ -67,3 +67,8 @@
     justify-content: center;
     padding: .5em;
 }
+
+.active {
+    border: .2em solid #2196F3;
+    transition: all 1s ease-out;
+}

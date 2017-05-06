@@ -9796,7 +9796,7 @@ var TrackCard = function TrackCard(_ref) {
 
   return _react2.default.createElement(
     "div",
-    { className: "Track-Card" },
+    { className: isPlaying ? "Track-Card active" : "Track-Card" },
     _react2.default.createElement("img", { alt: "Track-cover-art", src: coverArt }),
     _react2.default.createElement(
       "h1",

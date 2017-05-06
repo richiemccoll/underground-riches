@@ -16,7 +16,7 @@ const TrackCard = (
   }
 ) => {
   return (
-    <div className="Track-Card">
+    <div className={isPlaying ? "Track-Card active": "Track-Card"}>
       <img alt="Track-cover-art" src={coverArt} />
       <h1>{title}</h1>
       <h2>{artist}</h2>
