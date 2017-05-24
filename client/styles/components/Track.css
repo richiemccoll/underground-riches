@@ -4,7 +4,7 @@
 }
 
 .Track-Card img {
-    height: 300px;
+    height: 200px;
     width: 100%;
 }
 
@@ -66,9 +66,4 @@
     display: flex;
     justify-content: center;
     padding: .5em;
-}
-
-.active {
-    border: .2em solid #2196F3;
-    transition: all 1s ease-out;
 }

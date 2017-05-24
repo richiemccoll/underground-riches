@@ -39,6 +39,7 @@ class App extends React.Component {
                 playTrack={this.playTrack}
                 pauseTrack={this.pauseTrack}
                 tracks={this.state.tracks}
+                isPlaying={this.state.isPlaying}
               />}
 
           <PlayerContainer
