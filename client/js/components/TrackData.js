@@ -1,28 +1,20 @@
-export const tracks = [
-  {
-    id: 1,
-    coverArt: "https://i1.sndcdn.com/artworks-000190047286-93yrsh-t500x500.jpg",
-    title: "Glamour Shot",
-    artist: "Haus Head",
-    artistFacebook: "https://www.facebook.com/Mali%C3%B1o-882410088458312/?ref=aymt_homepage_panel",
-    artistSoundcloud: "https://soundcloud.com/haushead"
-  },
-  {
-    id: 2,
-    coverArt: 'https://i1.sndcdn.com/avatars-000210992758-h2n1i1-t500x500.jpg',
-    title: '3Days (Mihalis Safras Remix)',
-    artist: 'Wehbba',
-    artistFacebook: 'https://www.facebook.com/wehbba',
-    artistSoundcloud: 'https://soundcloud.com/wehbba/',
-    artistTwitter: 'https://twitter.com/wehbba',
-  },
-  {
-    id: 3,
-    coverArt: 'https://i1.sndcdn.com/artworks-000213720247-en59uz-t500x500.jpg',
-    title: 'EJECA - Dizorn (LNOE)',
-    artist: 'EJECA',
-    artistFacebook: 'https://www.facebook.com/Ejeca',
-    artistSoundcloud: 'https://soundcloud.com/ejeca',
-    artistTwitter: 'https://twitter.com/_ejeca'
-  }
-];
+import 'whatwg-fetch';
+
+async function fetchSoundcloud() {
+	const url = `https://api.soundcloud.com/users/underground-riches/favorites?client_id=SxZ147CXpYUuUkX93wX9UcZjqwXcsB1d`;
+	const response = await fetch(url);
+	const data = await response.json();
+  const info = extractTrackInfo(data);
+  return info;
+}
+
+function extractTrackInfo(response) {
+  return response.map((track) => {
+    const { id, stream_url, title, duration, artwork_url } = track;
+    const { username } = track.user;
+    return { stream_url, title, duration, artwork_url, username };
+  })
+}
+
+export default fetchSoundcloud;
+

@@ -2,18 +2,20 @@ import React from "react";
 import Nav from "./Nav";
 import TracksContainer from "./TracksContainer";
 import PlayerContainer from "./PlayerContainer";
-import { tracks } from "./TrackData";
+import fetchSoundcloud from "./TrackData";
 
 class App extends React.Component {
   state = {
     tracks: [],
+    loading: true,
     isPlaying: false,
     isPaused: false,
     currentTrack: {}
   };
 
   componentDidMount() {
-    this.setState({ tracks: tracks });
+    let tracks = fetchSoundcloud();
+    tracks.then(i => this.setState({ tracks: i, loading: false }));
   }
 
   playTrack = currentTrack => {
@@ -29,21 +31,22 @@ class App extends React.Component {
       <div className="container">
         <Nav />
         <main>
-          <TracksContainer
-            currentTrack={this.state.currentTrack}
-            isPlaying={this.state.isPlaying}
-            playTrack={this.playTrack}
-            pauseTrack={this.pauseTrack}
-            tracks={this.state.tracks}
-          />
-        
+          {this.state.loading
+            ? <h1>loading</h1>
+            : <TracksContainer
+                currentTrack={this.state.currentTrack}
+                isPlaying={this.state.isPlaying}
+                playTrack={this.playTrack}
+                pauseTrack={this.pauseTrack}
+                tracks={this.state.tracks}
+              />}
 
           <PlayerContainer
             isPlaying={this.state.isPlaying}
             track={this.state.currentTrack}
           />
-          
-          </main>
+
+        </main>
         <footer />
       </div>
     );
