@@ -16,7 +16,7 @@ const TrackCard = (
   }
 ) => {
   return (
-    <div className={isPlaying ? "Track-Card active": "Track-Card"}>
+    <div className="Track-Card">
       <img alt="Track-cover-art" src={coverArt} />
       <h1>{title}</h1>
       <h2>{artist}</h2>
@@ -46,25 +46,25 @@ const TrackCard = (
   );
 };
 
-let FacebookLink = ({ url }) => (
+const FacebookLink = ({ url }) => (
   <a href={url}>
     <li><img src="./facebook-icon.png" alt="artist-facebook" /></li>
   </a>
 );
 
-let TwitterLink = ({ url }) => (
+const TwitterLink = ({ url }) => (
   <a href={url}>
     <li><img src="./twitter-icon.png" alt="artist-twitter" /></li>
   </a>
 );
 
-let SoundcloudLink = ({ url }) => (
+const SoundcloudLink = ({ url }) => (
   <a href={url}>
     <li><img src="./soundcloud-icon.png" alt="artist-soundcloud" /></li>
   </a>
 );
 
-let InstagramLink = ({ url }) => (
+const InstagramLink = ({ url }) => (
   <a href={url}>
     <li><img src="./instagram-icon.png" alt="artist-instagram" /></li>
   </a>

@@ -10,9 +10,9 @@ class TracksContainer extends React.Component {
   render() {
     return (
       <div className="row">
-        {this.props.tracks.map(track => {
-          return (
-            
+        <SwipeableViews>
+          {this.props.tracks.map(track => {
+            return (
               <div key={track.id} className="col-xs-12 col-sm-6 col-md-4">
                 <TrackCard
                   isPlaying={
@@ -30,9 +30,9 @@ class TracksContainer extends React.Component {
                   pauseTrack={this.props.pauseTrack}
                 />
               </div>
-           
-          );
-        })}
+            );
+          })}
+        </SwipeableViews>
       </div>
     );
   }
