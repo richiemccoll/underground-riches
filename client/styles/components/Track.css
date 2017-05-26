@@ -1,6 +1,10 @@
 .Track-Card {
-    margin: 1.5em;
+    margin: 1em auto;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    max-width: 300px;
+    min-height: 370px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .Track-Card img {
@@ -9,13 +13,14 @@
 }
 
 .Track-Card h1 {
-    color: white;
+    color: black;
     letter-spacing: .5px;
     padding: .5em;
-    font-size: 1.25rem;
+    font-size: .75rem;
 }
 
 .Track-Card h2 {
+    font-size: .7rem;
     color: #9E9E9E;
     letter-spacing: .5px;
     padding: 0 .5em .5em .5em;
@@ -24,17 +29,11 @@
 .Track-Social-Links {
     display: flex;
     background-color: #616161;
-    color: #69F0AE;
     justify-content: space-around;
 }
 
 .Track-Social-Links li {
     padding: .75em 0;
-}
-
-.Track-Social-Links img {
-    height: 30px;
-    width: 30px;
 }
 
 .Track-Controls button {

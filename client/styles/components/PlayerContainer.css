@@ -7,8 +7,7 @@
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: .7s;
     height: 6em;
-    background-color: var(--color-gunmetal);
-    color: var(--color-turqouise);
+    font-size: .9rem;
     display: flex;
     justify-content: center;
     border-bottom: none;
@@ -17,4 +16,5 @@
     bottom: 0;
     width: 100%;
     left: 0;
+    text-align: center;
 }
