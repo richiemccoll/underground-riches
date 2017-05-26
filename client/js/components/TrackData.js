@@ -11,7 +11,7 @@ async function fetchSoundcloud() {
 
 function extractTrackInfo(response) {
   return response.map((track) => {
-    const { id, stream_url, title, duration, artwork_url } = track;
+    const { id, stream_url, title, duration, artwork_url, description } = track;
     const { username } = track.user;
     return { stream_url, title, duration, artwork_url, username };
   })

@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "./Nav";
 import TracksContainer from "./TracksContainer";
 import PlayerContainer from "./PlayerContainer";
 import fetchSoundcloud from "./TrackData";
@@ -29,7 +28,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Nav />
         <main>
           {this.state.loading
             ? <h1>loading</h1>

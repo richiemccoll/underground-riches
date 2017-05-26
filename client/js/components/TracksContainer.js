@@ -25,6 +25,7 @@ class TracksContainer extends React.Component {
                   key={track.id}
                   id={track.id}
                   artist={track.username}
+                  description={track.description}
                   coverArt={track.artwork_url}
                   title={track.title}
                   playTrack={this.playTrack}
