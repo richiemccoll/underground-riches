@@ -1,5 +1,5 @@
 import 'whatwg-fetch';
-import { CLIENT_ID, SOUNDCLOUD_ARTIST } from '../../constants/constants';
+import { CLIENT_ID, SOUNDCLOUD_ARTIST } from '../constants/constants';
 
 async function fetchSoundcloud() {
 	const url = `https://api.soundcloud.com/users/${SOUNDCLOUD_ARTIST}/favorites?client_id=${CLIENT_ID}`;
