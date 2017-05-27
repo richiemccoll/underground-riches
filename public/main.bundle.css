@@ -1066,29 +1066,24 @@ table {
   box-sizing: border-box;
 }
 
-.Nav-Logo {
-    margin: 1.5em;
-}
-
-.Nav-Logo a {
-    color: #69F0AE;
-    transition: .7s;
-}
-
-.Nav-Logo a:focus {
-    border-bottom: 1px solid #69F0AE;
+.Nav-Header {
+    font-size: 2em;
+    font-family: 'Pacifico';
+    padding: 1.5em;
+    color: black;
 }
 
 .Track-Card {
     margin: 1em auto;
     box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
     max-width: 300px;
-    min-height: 370px;
+    min-height: 300px;
     border-radius: 5px;
     text-align: center;
+    background-color: white;
 }
 
-.Track-Card img {
+.Track-Card-Background-Img {
     height: 200px;
     width: 100%;
 }
@@ -1152,11 +1147,29 @@ table {
 .Track-Controls-Play {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
+    display: flex; 
+    -webkit-box-pack: center; 
+        -ms-flex-pack: center; 
             justify-content: center;
-    padding: .5em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    top: 15px;
+    height: 200px;
+    width: 300px;
+    background-color: black;
+    opacity: 0.6;
+    transition: 0.7ms;
+}
+
+.Track-Controls-Play button {
+    background-color: transparent;
+    border: none;
+}
+
+.Track-Controls-Image {
+    height: 50px;
 }
 
 .Player-Container {
@@ -1172,6 +1185,11 @@ table {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: white;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1185,7 +1203,8 @@ table {
 }
 
 body {
-    background-color: white;
+    background-color: #eee;
+    text-align: center;
     font-family: sans-serif;
     font-weight: 300;
     line-height: 1.5;

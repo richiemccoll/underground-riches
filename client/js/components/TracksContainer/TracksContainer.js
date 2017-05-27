@@ -1,11 +1,11 @@
 import React from "react";
-import TrackCard from "./TrackCard";
+import TrackCard from "../TrackCard/TrackCard";
 import SwipeableViews from "react-swipeable-views";
 import { MatchMediaHOC } from "react-match-media";
 
 class TracksContainer extends React.Component {
-  playTrack = (id, title, artist) => {
-    this.props.playTrack({ id, title, artist });
+  playTrack = ({ id, title, artist, streamURL }) => {
+    this.props.playTrack(id, title, artist, streamURL);
   };
 
   render() {
@@ -19,14 +19,12 @@ class TracksContainer extends React.Component {
                   isPlaying={
                     this.props.currentTrack.id === track.id &&
                       this.props.isPlaying
-                      ? true
-                      : false
                   }
                   key={track.id}
                   id={track.id}
                   artist={track.username}
-                  description={track.description}
                   coverArt={track.artwork_url}
+                  streamURL={track.stream_url}
                   title={track.title}
                   playTrack={this.playTrack}
                   pauseTrack={this.props.pauseTrack}
@@ -48,13 +46,12 @@ class TracksContainer extends React.Component {
                   isPlaying={
                     this.props.currentTrack.id === track.id &&
                       this.props.isPlaying
-                      ? true
-                      : false
                   }
                   key={track.id}
                   id={track.id}
                   artist={track.username}
                   coverArt={track.artwork_url}
+                  streamURL={track.stream_url}
                   title={track.title}
                   playTrack={this.playTrack}
                   pauseTrack={this.props.pauseTrack}
@@ -70,10 +67,10 @@ class TracksContainer extends React.Component {
     const SmallScreen = MatchMediaHOC(SmallView, "(max-width: 799px)");
 
     return (
-    <div className="row">
-      <BigScreen />
-      <SmallScreen />
-    </div>
+      <div className="row">
+        <BigScreen />
+        <SmallScreen />
+      </div>
     );
   }
 }

@@ -9,6 +9,8 @@
     height: 6em;
     font-size: .9rem;
     display: flex;
+    flex-direction: column;
+    background-color: white;
     justify-content: center;
     border-bottom: none;
     transition: .7s;

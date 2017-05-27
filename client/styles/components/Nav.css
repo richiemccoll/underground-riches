@@ -1,12 +1,6 @@
-.Nav-Logo {
-    margin: 1.5em;
-}
-
-.Nav-Logo a {
-    color: var(--color-turqouise);
-    transition: .7s;
-}
-
-.Nav-Logo a:focus {
-    border-bottom: 1px solid var(--color-turqouise);
+.Nav-Header {
+    font-size: 2em;
+    font-family: 'Pacifico';
+    padding: 1.5em;
+    color: black;
 }

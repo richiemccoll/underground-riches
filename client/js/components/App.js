@@ -1,7 +1,9 @@
 import React from "react";
-import TracksContainer from "./TracksContainer";
-import PlayerContainer from "./PlayerContainer";
-import fetchSoundcloud from "./TrackData";
+import Nav from './Nav/Nav';
+import TracksContainer from "./TracksContainer/TracksContainer";
+import PlayerContainer from "./Player/PlayerContainer";
+import fetchSoundcloud from "../API";
+import Loading from "./Loading/Loading";
 
 class App extends React.Component {
   state = {
@@ -17,8 +19,9 @@ class App extends React.Component {
     tracks.then(i => this.setState({ tracks: i, loading: false }));
   }
 
-  playTrack = currentTrack => {
-    this.setState({ isPlaying: true, currentTrack: currentTrack });
+  playTrack = (id, title, artist, streamURL) => {
+    const newState = Object.assign({}, { id, title, artist, streamURL });
+    this.setState({ isPlaying: true, currentTrack: newState });
   };
 
   pauseTrack = () => {
@@ -28,9 +31,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
+        <Nav />
         <main>
           {this.state.loading
-            ? <h1>loading</h1>
+            ? <Loading />
             : <TracksContainer
                 currentTrack={this.state.currentTrack}
                 isPlaying={this.state.isPlaying}
